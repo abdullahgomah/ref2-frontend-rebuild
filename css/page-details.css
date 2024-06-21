@@ -33,3 +33,10 @@ section.page-code .section__header {
     width: 100%;
     height: auto;
 }
+
+
+.page-actions {
+    display: flex;
+    column-gap: 1rem; 
+    flex-wrap: wrap;
+}

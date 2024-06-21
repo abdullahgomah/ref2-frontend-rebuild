@@ -19,13 +19,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/page-details.css">
+    <link rel="stylesheet" href="./css/page-preview.css">
 </head>
 <body>
     
 
+    <!-- 
     <header>
-        <!-- <div class="container"> -->
             <div class="logo-container">
                 <p class="logo-text">
                     <a href="">
@@ -51,53 +51,20 @@
             <div class="burger-menu">
                 <i class="fa-solid fa-bars"></i>
             </div>
-        <!-- </div> -->
     </header>
+--> 
 
 
-    <section class="page-code">
-        <div class="container">
-            <div class="section__header">
-                <h1 class="section__heading__title">الرئيسية</h1>
-                <a href="#" class="btn btn-outline">معاينة</a>
-            </div>
-            <br>
-            <div class="section__content">
-                <!-- here is code editor -->
+    <input type="hidden" name="html-code" id="html-code">
+    <input type="hidden" name="css-code" id="css-code">
+    <input type="hidden" name="js-code" id="js-code">
+    <section>
 
-                <div class="code-div">
-                    <p>
-                        <i class="fa-brands fa-html5"></i>
-                        HTML
-                    </p>
-                    <textarea name="html-code" id="html-code" onkeyup="run()"></textarea>
-                </div>
+        <iframe id="preview-iframe"></iframe>
 
-                <div class="code-div">
-                    <p>
-                        <i class="fa-brands fa-css3-alt"></i>
-                        CSS
-                    </p>
-                    <textarea onkeyup="run()" name="css-code" id="css-code"></textarea>
-                </div>
-
-                <div class="code-div">
-                    <p>
-                        <i class="fa-brands fa-js"></i>
-                        JS
-                    </p>
-                    <textarea name="js-code" id="js-code" onkeyup="run()"></textarea>
-                </div>
-
-                <iframe id="output-iframe" name="output-iframe" ></iframe>
-
-                <div class="page-actions">
-                    <a href="#" class="btn btn-outline">حفظ</a>
-                    <a href="#" class="btn btn-solid-danger">حذف الصفحة</a>
-                </div>
-            </div>
-        </div>
     </section>
+
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
@@ -107,14 +74,13 @@
         let htmlCode = document.querySelector('#html-code'); 
         let cssCode = document.querySelector('#css-code'); 
         let jsCode = document.querySelector('#js-code'); 
-        let outputIframe = document.querySelector('#output-iframe'); 
+        let previewIframe = document.querySelector('#preview-iframe'); 
 
         function run () { 
-            outputIframe.contentDocument.body.innerHTML  = htmlCode.value + "<style>" + cssCode.value + "</style>"
-            outputIframe.contentWindow.eval(jsCode.value); 
+            previewIframe.contentDocument.body.innerHTML  = htmlCode.value + "<style>" + cssCode.value + "</style>"
+            previewIframe.contentWindow.eval(jsCode.value); 
         }
 
     </script>
-    <script src="./js/main.js"></script>
 </body>
 </html>

@@ -127,6 +127,11 @@ section .section__heading .section__heading__text {
     border: 1px solid #121212;
 }
 
+.btn-solid-danger {
+    background: #dc3545; 
+    color: #ffffff;
+}
+
 
 
 
